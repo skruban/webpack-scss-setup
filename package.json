@@ -6,6 +6,9 @@
   "author": "skruban",
   "license": "MIT",
   "private": false,
+  "scripts": {
+    "build": "webpack webpack.config.js"
+  },
   "dependencies": {
     "webpack": "^4.29.6"
   }
