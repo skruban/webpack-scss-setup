@@ -1,1 +1,3 @@
-console.log('hello world')
+setTimeout(function() {
+    alert('MOFO')
+}, 2000)
