@@ -14,13 +14,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['@babel/preset-env']
-        }
-      },
-      {
         test: /\.html$/,
         loader: 'html-loader'
       }
@@ -28,10 +21,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      nject: false,
       hash: true,
-      template: './dev/index.html',
-      filename: 'index.html'
+      filename: './build/index.html'
     })
   ]
 };
