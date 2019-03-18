@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+let path = require('path');
+let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -8,9 +8,29 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'main.js'
   },
+  node: {
+    fs: 'empty'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['@babel/preset-env']
+        }
+      },
+      {
+        test: /\.html$/,
+        loader: 'html-loader'
+      }
+    ]
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'try',
+      nject: false,
+      hash: true,
+      template: './dev/index.html',
       filename: 'index.html'
     })
   ]
