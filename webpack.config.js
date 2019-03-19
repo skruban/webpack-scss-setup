@@ -9,7 +9,8 @@ module.exports = {
     filename: 'main.js'
   },
   node: {
-    fs: 'empty'
+    fs: 'empty',
+    module: 'empty'
   },
   module: {
     rules: [
@@ -24,5 +25,6 @@ module.exports = {
       hash: true,
       filename: './build/index.html'
     })
-  ]
+  ],
+  devServer: { contentBase: path.join(__dirname, 'dist'), compress: true, port: 9000 }
 };
