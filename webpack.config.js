@@ -16,7 +16,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      filename: 'index.html'
+      filename: 'index.html',
+      template: 'dev/main.html'
     })
   ],
   devServer: {
