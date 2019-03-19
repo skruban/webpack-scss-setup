@@ -10,15 +10,8 @@ module.exports = {
   },
   node: {
     fs: 'empty',
-    module: 'empty'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.html$/,
-        loader: 'html-loader'
-      }
-    ]
+    module: 'empty',
+    fsevents: 'empty'
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,5 +19,9 @@ module.exports = {
       filename: './build/index.html'
     })
   ],
-  devServer: { contentBase: path.join(__dirname, 'dist'), compress: true, port: 9000 }
+  devServer: {
+    contentBase: path.join(__dirname, 'build'),
+    compress: true,
+    port: 9000
+  }
 };
